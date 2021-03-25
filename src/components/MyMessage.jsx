@@ -1,11 +1,10 @@
 import '../App.css'
 
 const MyMessage = ({ message }) => {
-  console.log("message", message);
-  if (message?.attachment?.length > 0) {
+  if (message?.attachments?.length) {
     return (
       <img
-        src={message?.attachment?.file}
+        src={message?.attachments[0]?.file}
         alt="message-attachment"
         className="message-image"
         style={{ float: "right" }}
@@ -17,7 +16,7 @@ const MyMessage = ({ message }) => {
       className="message"
       style={{
         float: "right",
-        marginRight: "15px",
+        marginRight: "5px",
         color: "#fff",
         backgroundColor: "#260d3d",
       }}

@@ -11,9 +11,9 @@ const TheirMessage = ({ message, lastMessage }) => {
         />
       )}
 
-      {message.attachment.length > 0 ? (
+      {message?.attachments?.length ? (
         <img
-          src={message?.attachment?.file}
+          src={message?.attachments[0]?.file}
           alt="message-attachment"
           className="message-image"
           style={{ marginLeft: isMessageByUser ? "4px" : "48px" }}
@@ -24,7 +24,7 @@ const TheirMessage = ({ message, lastMessage }) => {
           style={{
             float: "left",
             backgroundColor: "#CABDCD",
-            marginLeft: isMessageByUser ? "4px" : "48px" 
+            marginLeft: isMessageByUser ? "4px" : "48px",
           }}
         >
           {message.text}
